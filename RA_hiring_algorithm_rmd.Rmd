@@ -5,9 +5,8 @@ date: "11/23/2020"
 output: html_document
 ---
 
-
+### Import Dataset
 ```{r}
-# Import dataset
 getwd()
 setwd("C:/Users/james/Desktop/POLI170 Policy memo/RA_hiring_algorithm")
 df <- read.csv("RA_dataset.csv", fileEncoding="UTF-8-BOM")
@@ -16,15 +15,14 @@ df$ID <- NULL
 
 ```
 
+### convert catergorical values into factors
 ```{r}
-#convert catergorical values into factors
 #df$race <- factor(df$race)
 
 ```
 
-
+### linear regression
 ```{r}
-#linear regression
 RA_linreg <- lm(df)
 summary(RA_linreg)
 
