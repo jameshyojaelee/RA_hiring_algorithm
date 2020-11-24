@@ -1,4 +1,4 @@
-# RA_hiring_algorithm
+# RA hiring algorithm
 ### machine learning algorithm for RA hiring process
 
 ## 1. Dataset 
