@@ -3,14 +3,14 @@
 
 ## 1. Dataset 
 **column variables** </br>
-ID: unique ID associated with an RA </br>
-year: school year  </br>
-age: age </br>
-gender: 1-female, 2-male, 3-non-binary </br> 
-race: 5 options including "American Indian or Alaska Native", "Asian", "Black or African American", Native Hawaiian or Other pacific islander, "white"</br>
-ethnicity: "Hispanic or Lation or Spaniash Origion" (1) and "Not Hispanic or Latino or Spanish origin" (0) </br>
-GPA: GPA </br>
-major: major </br>
+**ID**: unique ID associated with an RA </br>
+**year**: school year  </br>
+**age**: age </br>
+**gender**: 1-female, 2-male, 3-non-binary </br> 
+**race**: 5 options including "American Indian or Alaska Native", "Asian", "Black or African American", "Native Hawaiian or Other pacific islander", "white"</br>
+**ethnicity**: "Hispanic or Lation or Spaniash Origion" (1) and "Not Hispanic or Latino or Spanish origin" (0) </br>
+**GPA**: GPA </br>
+**major**: major </br>
 </br>
 </br>
 ### Below are the survey questions. scale of 1-10s </br>
