@@ -1,5 +1,5 @@
 # RA hiring algorithm
-### machine learning algorithm for RA hiring process
+### Machine learning algorithm for RA hiring process
 
 ## 1. Dataset 
 | variable      | description                                                                                                                                        |
