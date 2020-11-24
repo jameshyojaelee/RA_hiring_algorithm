@@ -12,8 +12,7 @@
 **GPA**: GPA </br>
 **major**: major </br>
 </br>
-</br>
-### Below are the survey questions. scale of 1-10 </br>
+*Below are the survey questions. scale of 1-10* </br>
 up to Q20, scores are random numbers (weighted accordingly) </br>
 from Q21 to Q50, scores are randomly calculated based on the average of the scores of the first 20 questions </br>
 </br>
