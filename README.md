@@ -13,8 +13,8 @@
 | **GPA**       | GPA                                                                                                                                                |
 | **major**     | major                                                                                                                                              |
 </br>
-*Below are the survey questions. scale of 1-10* </br>
-
+**Below are the survey questions. scale of 1-10**
+</br>
 up to Q20, scores are random numbers (weighted accordingly) </br>
 from Q21 to Q50, scores are calculated based on the average of the scores of the first 20 questions </br>
 
@@ -26,9 +26,9 @@ from Q21 to Q50, scores are calculated based on the average of the scores of the
 
 **Q4**  : Problem-solving ability (1-10) </br>
 
-**Q5**   : Ability to handle conflict (1-10) </br>
+**Q5**  : Ability to handle conflict (1-10) </br>
 
-**Q6**  : Respectful (1-10) </br>
+**Q6** : Respectful (1-10) </br>
 
 **Q7** : Open-minded (1-10) </br>
 
