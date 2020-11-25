@@ -16,16 +16,16 @@
 *Below are the survey questions. scale of 1-10* </br>
 up to Q20, scores are random numbers (weighted accordingly) </br>
 from Q21 to Q50, scores are calculated based on the average of the scores of the first 20 questions </br>
-**Q1**: Ability to host an event (1-10) </br>
-**Q2**: Informative (1-10) </br>
-**Q3**: Friendly (1-10) </br>
-**Q4**: Problem-solving ability (1-10) </br>
-**Q5**: Ability to handle conflict (1-10) </br>
-**Q6**: Respectful (1-10) </br>
-**Q7**: Open-minded (1-10) </br>
-**Q8**: Communication (1-10) </br>
-**Q9**: trustworthiness (1-10) </br>
-**Q10**: Ability to control "group disorders" e.g. noises, parties</br>
+**Q1** : Ability to host an event (1-10) </br>
+**Q2** : Informative (1-10) </br>
+**Q3** : Friendly (1-10) </br>
+**Q4** : Problem-solving ability (1-10) </br>
+**Q5** : Ability to handle conflict (1-10) </br>
+**Q6** : Respectful (1-10) </br>
+**Q7** : Open-minded (1-10) </br>
+**Q8** : Communication (1-10) </br>
+**Q9** : trustworthiness (1-10) </br>
+**Q10** : Ability to control "group disorders" e.g. noises, parties</br>
 **Q11 - Q50** : other questions </br>
 </br>
 </br>
