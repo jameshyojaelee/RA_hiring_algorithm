@@ -44,7 +44,7 @@ from Q21 to Q50, scores are calculated based on the average of the scores of the
 </br>
 
 ## 2. Data Preprocessing
-The original data contain catergorical values: race and major </br>
+The original data contain catergorical values: *race and major* </br>
 | race    | count |
 |---------|-------|
 |         |       |
