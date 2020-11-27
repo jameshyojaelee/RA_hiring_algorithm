@@ -43,6 +43,38 @@ from Q21 to Q50, scores are calculated based on the average of the scores of the
 </br>
 </br>
 
-## 2. Algorithms
+## 2. Data Preprocessing
+The original data contain catergorical values: race and major </br>
+| race    | count |
+|---------|-------|
+|         |       |
+| White   | 516   |
+| Asian   | 395   |
+| Black   | 72    |
+| Native  | 9     |
+| Pacific | 8     |
+
+| race              | count |
+|-------------------|-------|
+|                   |       |
+| Biology           | 200   |
+| Engineering       | 163   |
+| Physical_Sciences | 162   |
+| Math              | 86    |
+| Psychology        | 46    |
+| Arts              | 40    |
+| Communication     | 29    |
+| Health            | 23    |
+| History           | 5     |
+
+</br>
+</br>
+
+These are counted seperately and excluded from data normalization steps. </br>
+The subset of data is then normalized using Z-score. **z = (x – μ) / (σ / √n) ** </br>
+</br>
+</br>
+
+## 3. Algorithms
 1) Principal Component Analysis (PCA) </br>
 2) Logistic Regression: binary prediction of whether to hire an applicant or not </br>
