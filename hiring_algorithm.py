@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 # from sklearn import preprocessing
 import requests
 
@@ -22,4 +23,8 @@ race_count = RA["race"].value_counts().to_frame()
 major_count = RA["major"].value_counts().to_frame()
 race_count
 major_count
+
+
+
+
 

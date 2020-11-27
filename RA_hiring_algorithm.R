@@ -10,19 +10,14 @@ head(df)
 
 df$scoreMean <- rowMeans(df[,9:58])
 
-
 #hypothesis 1: higher gpa = higher score in evaluation
 t.test(df$GPA, df$scoreMean)
 
-
-
-
-# convert catergorical values into factors
-#df$race <- factor(unique(df$race))
-
+# delete catergorical values into factors
 df$race <- NULL
 df$major <- NULL
 
+# PCA without normalization (what NOT to do)
 RA_pca <- prcomp(df)
 summary(RA_pca)
 
