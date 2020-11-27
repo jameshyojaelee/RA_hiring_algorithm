@@ -8,6 +8,14 @@ df <- read.csv("RA_dataset.csv", fileEncoding="UTF-8-BOM")
 rownames(df) <- df[,1]
 head(df)
 
+df$scoreMean <- rowMeans(df[,9:58])
+
+
+#hypothesis 1: higher gpa = higher score in evaluation
+t.test(df$GPA, df$scoreMean)
+
+
+
 
 # convert catergorical values into factors
 #df$race <- factor(unique(df$race))
