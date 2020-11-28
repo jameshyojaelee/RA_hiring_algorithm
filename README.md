@@ -2,6 +2,7 @@
 ### Machine learning algorithm for RA hiring process
 
 ## 1. Dataset 
+### (RA_dataset.csv)
 | variable      | description                                                                                                                                        |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | **ID**        | unique ID associated with an RA                                                                                                                    |
@@ -76,4 +77,7 @@ The subset of data is then normalized using Z-score. **z = (x – μ) / (σ / �
 
 ## 3. Algorithms
 1) Principal Component Analysis (PCA) </br>
-2) Logistic Regression: binary prediction of whether to hire an applicant or not </br>
+2) Customized categorical classification vs Hierarchical clustering
+Option 1) Using Confusion matrix, calculate F-1 score of each binary value (whether that person was hired or not) 
+Option 2) Clustered Linear Regression (CLR) (or it could be polynomial)
+-R-squared values will be calculated for option 2 regression model in order to carry out in-sample model evaluation
