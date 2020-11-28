@@ -76,7 +76,7 @@ The subset of data is then normalized using Z-score. **z = (x – μ) / (σ / �
 </br>
 
 ## 3. Algorithms
-1) Principal Component Analysis (PCA) </br>
+1) **Principal Component Analysis (PCA)** </br>
 2) Customized categorical classification vs **Hierarchical clustering** </br>
 Option 1) Using **Confusion matrix**, calculate **F-1 score** of each binary value (whether that person was hired or not) </br>
 Option 2) **Clustered Linear Regression** (CLR) (or it could be polynomial) </br>
