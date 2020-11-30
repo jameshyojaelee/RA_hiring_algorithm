@@ -2,7 +2,7 @@
 ### Machine learning algorithm for RA hiring process
 
 ## 1. Dataset 
-### (RA_dataset.csv)
+### [RA_dataset.csv](https://github.com/jameshyojaelee/RA_hiring_algorithm/raw/main/RA_dataset.csv)
 | variable      | description                                                                                                                                        |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | **ID**        | unique ID associated with an RA                                                                                                                    |
