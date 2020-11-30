@@ -48,10 +48,10 @@ from Q21 to Q50, scores are calculated based on the average of the scores of the
 The original data contain catergorical values: *race and major* </br>
 
 <table>
-<tr><th>Table 1 Heading 1 </th><th>Table 1 Heading 2</th></tr>
+<tr><th> Race </th><th> Major </th></tr>
 <tr><td>
 
-| race    | count |
+| Race    | count |
 |---------|-------|
 |         |       |
 | White   | 516   |
@@ -62,7 +62,7 @@ The original data contain catergorical values: *race and major* </br>
 
 </td><td>
 
-| race              | count |
+| Major             | count |
 |-------------------|-------|
 |                   |       |
 | Biology           | 200   |
