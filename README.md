@@ -46,6 +46,11 @@ from Q21 to Q50, scores are calculated based on the average of the scores of the
 
 ## 2. Data Preprocessing
 The original data contain catergorical values: *race and major* </br>
+
+<table>
+<tr><th>Table 1 Heading 1 </th><th>Table 1 Heading 2</th></tr>
+<tr><td>
+
 | race    | count |
 |---------|-------|
 |         |       |
@@ -54,6 +59,8 @@ The original data contain catergorical values: *race and major* </br>
 | Black   | 72    |
 | Native  | 9     |
 | Pacific | 8     |
+
+</td><td>
 
 | race              | count |
 |-------------------|-------|
@@ -67,6 +74,8 @@ The original data contain catergorical values: *race and major* </br>
 | Communication     | 29    |
 | Health            | 23    |
 | History           | 5     |
+
+</td></tr> </table>
 
 </br>
 
