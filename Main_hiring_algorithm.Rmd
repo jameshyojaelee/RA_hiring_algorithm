@@ -8,6 +8,8 @@ output: html_document
 ```{r}
 library(reticulate)
 use_python("C:/ProgramData/Anaconda3")
+original_df <- read.csv("C:/Users/james/Desktop/POLI170 Policy memo/RA_hiring_algorithm/RA_dataset.csv")
+
 ```
  
 
@@ -46,21 +48,78 @@ major_count
 
 ```{r}
 
-#hypothesis 1: higher gpa = higher score in evaluation
-t.test(df$GPA, df$scoreMean)
+normalized_data <- py$normalized_data
+head(normalized_data)
 
-#make subset without categorical values
-drops <- c("race", "major")
-df_numeric <- df[, !names(df) %in% drops]
-
-
-# PCA without normalization (what NOT to do)
-RA_pca <- prcomp(df_numeric)
+# PCA after normalization 
+RA_pca <- prcomp(normalized_data)
 summary(RA_pca)
 
-# Plot PC1 vs PC2
-plot(RA_pca$x[,1], RA_pca$x[,2], xlab="PC1", ylab="PC2", xlim=c(-270,500))
-text(RA_pca$x[,1], RA_pca$x[,2], colnames(x))
+```
+
+
+```{r}
+#biplot (NOT ideal)
+biplot(RA_pca)
+
+```
+
+```{r}
+# Variance explained by each principal component: pve
+
+pr.var <- RA_pca$sdev^2
+pve <- pr.var / sum(pr.var)
+
+# Plot variance explained for each principal component
+plot(pve, xlab = "Principal Component", 
+     ylab = "Proportion of Variance Explained", 
+     ylim = c(0, 1), type = "o")
+
+
+```
+
+
+```{r}
+# Load the ggplot2 package
+library(ggplot2)
+
+pca_df <- as.data.frame(RA_pca$x)
+
+# Make a scatter plot colored by diagnosis
+ggplot(pca_df, aes(x=PC1, y=PC2)) + geom_point(color="red") + theme_bw()
+
+
+```
+```{r}
+library(dplyr)
+
+df_cat <- original_df %>%
+              select("race", "major")
+
+
+pca_df_cat <- merge(pca_df, df_cat, by=0)
+
+#plot again and color by race
+ggplot(pca_df_cat, aes(x=PC1, y=PC2, col=race)) + geom_point() + theme_bw() + scale_color_manual(values=c("red", "blue", "green", "black", "grey"))
+
+```
+```{r}
+#plot again and color by race
+ggplot(pca_df_cat, aes(x=PC1, y=PC2, col=major)) + geom_point() + theme_bw() 
+
+```
+
+
+
+ 
+```{r}
+#hypothesis 1: higher gpa = higher score in evaluation
+#t.test(df$GPA, df$scoreMean)
+
+#make subset without categorical values
+#drops <- c("race", "major")
+#df_numeric <- df[, !names(df) %in% drops]
+
 
 ```
  
