@@ -2,6 +2,7 @@
 ### Machine learning algorithm for RA hiring process
 
 ## 1. Dataset 
+### [RA_dataset.csv](https://github.com/jameshyojaelee/RA_hiring_algorithm/raw/main/RA_dataset.csv)
 | variable      | description                                                                                                                                        |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | **ID**        | unique ID associated with an RA                                                                                                                    |
@@ -45,7 +46,12 @@ from Q21 to Q50, scores are calculated based on the average of the scores of the
 
 ## 2. Data Preprocessing
 The original data contain catergorical values: *race and major* </br>
-| race    | count |
+
+<table>
+<tr><th> Race </th><th> Major </th></tr>
+<tr><td>
+
+| Race    | count |
 |---------|-------|
 |         |       |
 | White   | 516   |
@@ -54,7 +60,9 @@ The original data contain catergorical values: *race and major* </br>
 | Native  | 9     |
 | Pacific | 8     |
 
-| race              | count |
+</td><td>
+
+| Major             | count |
 |-------------------|-------|
 |                   |       |
 | Biology           | 200   |
@@ -67,13 +75,15 @@ The original data contain catergorical values: *race and major* </br>
 | Health            | 23    |
 | History           | 5     |
 
+</td></tr> </table>
+
 </br>
 
 These are counted seperately and excluded from data normalization steps. </br>
-The subset of data is then normalized using Z-score. **z = (x – μ) / (σ / √n) ** </br>
+The subset of data is then normalized using Z-score. </br>
 </br>
 </br>
 
 ## 3. Algorithms
-1) Principal Component Analysis (PCA) </br>
-2) Logistic Regression: binary prediction of whether to hire an applicant or not </br>
+1) **Principal Component Analysis (PCA)** </br>
+2) Customized categorical classification vs **Hierarchical clustering** </br> * Option 1) Using **Confusion matrix**, calculate **F-1 score** of each binary value (whether that person was hired or not) </br> * Option 2) **Clustered Linear Regression** (CLR) (or it could be polynomial) </br> * R-squared values will be calculated for option 2 regression model in order to carry out in-sample model evaluation </br>
