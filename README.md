@@ -80,7 +80,7 @@ The original data contain catergorical values: *race and major* </br>
 </br>
 
 These are counted seperately and excluded from data normalization steps. </br>
-The subset of data is then normalized using Z-score. **z = (x – μ) / (σ / √n) ** </br>
+The subset of data is then normalized using Z-score. </br>
 </br>
 </br>
 
