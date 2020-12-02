@@ -8,7 +8,7 @@ output: html_document
 ```{r}
 library(reticulate)
 use_python("C:/ProgramData/Anaconda3")
-original_df <- read.csv("C:/Users/james/Desktop/POLI170 Policy memo/RA_hiring_algorithm/RA_dataset.csv")
+original_df <- read.csv("C:/Users/james/Desktop/POLI170 Policy memo/RA_hiring_algorithm/RA_dataset2.csv")
 
 ```
  
@@ -22,7 +22,7 @@ from sklearn import preprocessing
 
 import requests
 
-filepath = 'C:/Users/james/Desktop/POLI170 Policy memo/RA_hiring_algorithm/RA_dataset.csv'
+filepath = 'C:/Users/james/Desktop/POLI170 Policy memo/RA_hiring_algorithm/RA_dataset2.csv'
 
 RA = pd.read_csv(filepath)
 print(RA.iloc[:5])
