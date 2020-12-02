@@ -28,7 +28,7 @@ RA = pd.read_csv(filepath)
 print(RA.iloc[:5])
 
 # create subset without categorical values
-RA_numeric = RA.drop(['race', 'major'], axis = 1)
+RA_numeric = RA.drop(['ID', 'race', 'major', 'gender', 'ethnicity'], axis = 1)
 
 # Data normalization is required since each column includes its own value range
 # use subset to normalize columns using z-score 
@@ -54,7 +54,6 @@ head(normalized_data)
 # PCA after normalization 
 RA_pca <- prcomp(normalized_data)
 summary(RA_pca)
-
 ```
 
 
@@ -85,27 +84,52 @@ library(ggplot2)
 
 pca_df <- as.data.frame(RA_pca$x)
 
-# Make a scatter plot colored by diagnosis
+# Make a scatter plot
 ggplot(pca_df, aes(x=PC1, y=PC2)) + geom_point(color="red") + theme_bw()
 
 
 ```
+
+
+
 ```{r}
 library(dplyr)
 
 df_cat <- original_df %>%
-              select("race", "major")
+              select("race", "major", "gender")
 
+df_cat$gender <- as.character(df_cat$gender)
+class(df_cat$gender)
+df_cat$gender[df_cat$gender=="1"] <- "Female"
+df_cat$gender[df_cat$gender=="2"] <- "Male"
+df_cat$gender[df_cat$gender=="3"] <- "Non-binary"
 
 pca_df_cat <- merge(pca_df, df_cat, by=0)
 
+
 #plot again and color by race
-ggplot(pca_df_cat, aes(x=PC1, y=PC2, col=race)) + geom_point() + theme_bw() + scale_color_manual(values=c("red", "blue", "green", "black", "grey"))
+ggplot(pca_df_cat, aes(x=PC1, y=PC2, col=race)) + geom_point() + theme_bw() + scale_color_manual(values=c("red", "blue", "green", "black", "grey")) + ggtitle("PCA: PC1 vs PC2 with race indicator")
 
 ```
+
+
+
+
+```{r}
+
+#plot again and color by gender
+ggplot(pca_df_cat, aes(x=PC2, y=PC3, col=gender)) + geom_point() + theme_bw() + scale_color_manual(values=c("Black", "Purple", "Red")) + ggtitle("PCA: PC2 vs PC3 with gender indicator")
+
+
+```
+
+
+
+
 ```{r}
 #plot again and color by race
-ggplot(pca_df_cat, aes(x=PC1, y=PC2, col=major)) + geom_point() + theme_bw() 
+ggplot(pca_df_cat, aes(x=PC1, y=PC3, col=major)) + geom_point() + theme_bw() + ggtitle("PCA: PC1 vs PC3 with major indicator")
+
 
 ```
 
