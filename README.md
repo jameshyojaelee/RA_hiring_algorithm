@@ -1,5 +1,9 @@
 # RA hiring algorithm
 ### Machine learning algorithm for RA hiring process
+As mentioned in the previous section, algorithms can help expedite the hiring process and bring a more unbiased view. Before the hiring team goes through each individual’s resume, the algorithms can filter out applicants that do not meet the basic qualifications or failed certain tests that the algorithm implements. <br>
+Along with our algorithms, we want to propose that each applicant takes a customized personality/attribute survey. This survey serves a similar purpose as the one that Cambridge Analytica utilized for the 2016 presidential election and the 2016 U.K EU membership referendum. Each applicant will be prompted to log in to our survey website using one of their social media accounts (Facebook, Linkedin or Twitter) to answer our questions and the basic information from their social media profiles will be gathered for the same purpose. In order to prevent biased decision making or privacy breach by any of the hiring team members, the information gathered during this step will be digitized, normalized and regularized for our algorithm. The sole purpose of this survey is to collect as many data points as possible, not to pry into their personal life. <br>
+The survey will entail all the independent variables that we will be using to build the statistical model. The outcome variable of our algorithm is the measurement of how well RAs can work with a diverse group of students. The initial outcome variables will be collected from the current RAs based on the feedback they got from students and the internal assessments that were conducted by each college. Just like the survey data, the outcome data will be normalized using Z-score. <br>
+<br>
 
 ## 1. Dataset 
 ### [RA_dataset.csv](https://github.com/jameshyojaelee/RA_hiring_algorithm/raw/main/RA_dataset.csv)
@@ -85,5 +89,26 @@ The subset of data is then normalized using Z-score. </br>
 </br>
 
 ## 3. Algorithms
-1) **Principal Component Analysis (PCA)** </br>
-2) Customized categorical classification vs **Hierarchical clustering** </br> * Option 1) Using **Confusion matrix**, calculate **F-1 score** of each binary value (whether that person was hired or not) </br> * Option 2) **Clustered Linear Regression** (CLR) (or it could be polynomial) </br> * R-squared values will be calculated for option 2 regression model in order to carry out in-sample model evaluation </br>
+
+The survey questions are digitized and normalized on the scale of 1-10. In the pseudo-data we have created, there are 50 indicators that are derived from the survey. Since there are too many variables, we carried out Principal Component Analysis (PCA) in order to reduce the dimensions. Some of the categorical variables above are dropped before calculating the PCA values. PCA is calculated using the covariance matrix, eigenvectors and eigenvalues. </br>
+The categorical variables are added on after PCA in order to visualize the distribution of those variables. As seen in the below graphs, none of the categorical variables have a significant impact on the results. Once again, this is derived from pseudo-data so the results may be different from these. We are focusing more on the methodology here. 
+</br>
+Figure 1) PC1 vs PC2 with the race indicator. There is no clear distinction between each race. 
+![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PC1%20vs%20PC2%20(Race).JPG) 
+</br>
+Figure 2) PC2 vs PC3 with the gender indicator. There is no clear distinction between each gender either. 
+![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PC2%20vs%20PC3%20(gender).JPG)
+</br>
+Figure 3) PC1 vs PC2 with the major indicator. There is no clear distinction between each major either.  
+![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PC1%20vs%20PC3%20(Major).JPG)
+</br>
+Figure 5) The proportion of variance for each principal component. PC1 is the largest component and the rest have a similar level of variance. This indicates that none of the categorical variables have a meaningful impact on the result. 
+![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/Principal%20Component%20Variance%20Proportion.JPG)
+</br>
+</br>
+There are several other ways that we can analyze the data. For example, either k-means clustering or hierarchical clustering can be used to group the data points together. (Due to the continuous variables and other properties, k-means clustering may be more ideal in our case). </br>
+After clustering groups together, we can introduce the traditional supervised learning method: Linear Regression. Depending on the data, polynomial regression may be necessary and further value regularization may be required. Furthermore, in real-life there may be more variants that cause biases, in which case either Lasso or Ridge regression can be utilized in order to prevent under- or over-fitting.  </br>
+  After building a regression model, R-squared values need to be reviewed in order to carry out in-sample model evaluation. </br>
+
+**Model Training and Testing** </br>
+Once our statistical model is established, we need to “train” the data. K-fold cross-validation will be applied (probably around 5-10 fold) in order to reduce bias. For the sake of simplicity, we will assume that linear regression was sufficient to build our model. </br>
