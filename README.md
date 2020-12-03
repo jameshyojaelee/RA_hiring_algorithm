@@ -95,16 +95,16 @@ The survey questions are digitized and normalized on the scale of 1-10. In the p
 The categorical variables are added on after PCA in order to visualize the distribution of those variables. As seen in the below graphs, none of the categorical variables have a significant impact on the results. Once again, this is derived from pseudo-data so the results may be different from these. We are focusing more on the methodology here. 
 </br>
 Figure 1) PC1 vs PC2 with the race indicator. There is no clear distinction between each race. 
-![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PC1%20vs%20PC2%20(Race).JPG) 
+![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PCA/PC1%20vs%20PC2%20(Race).JPG) 
 </br>
 Figure 2) PC2 vs PC3 with the gender indicator. There is no clear distinction between each gender either. 
-![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PC2%20vs%20PC3%20(gender).JPG)
+![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PCA/PC2%20vs%20PC3%20(gender).JPG)
 </br>
 Figure 3) PC1 vs PC2 with the major indicator. There is no clear distinction between each major either.  
-![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PC1%20vs%20PC3%20(Major).JPG)
+![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PCA/PC1%20vs%20PC3%20(Major).JPG)
 </br>
 Figure 5) The proportion of variance for each principal component. PC1 is the largest component and the rest have a similar level of variance. This indicates that none of the categorical variables have a meaningful impact on the result. 
-![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/Principal%20Component%20Variance%20Proportion.JPG)
+![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PCA/Principal%20Component%20Variance%20Proportion.JPG)
 </br>
 </br>
 There are several other ways that we can analyze the data. For example, either k-means clustering or hierarchical clustering can be used to group the data points together. (Due to the continuous variables and other properties, k-means clustering may be more ideal in our case). </br>
