@@ -8,7 +8,7 @@ output: html_document
 ```{r}
 library(reticulate)
 use_python("C:/ProgramData/Anaconda3")
-original_df <- read.csv("C:/Users/james/Desktop/POLI170 Policy memo/RA_hiring_algorithm/RA_dataset2.csv")
+original_df <- read.csv("C:/Users/james/Desktop/POLI170 Policy memo/RA_hiring_algorithm/RA_dataset2.csv", fileEncoding="UTF-8-BOM")
 
 ```
  
@@ -28,7 +28,7 @@ RA = pd.read_csv(filepath)
 print(RA.iloc[:5])
 
 # create subset without categorical values
-RA_numeric = RA.drop(['ID', 'race', 'major', 'gender', 'ethnicity'], axis = 1)
+RA_numeric = RA.drop(['ID', 'race', 'major', 'gender', 'ethnicity', 'score'], axis = 1)
 
 # Data normalization is required since each column includes its own value range
 # use subset to normalize columns using z-score 
@@ -96,7 +96,7 @@ ggplot(pca_df, aes(x=PC1, y=PC2)) + geom_point(color="red") + theme_bw()
 library(dplyr)
 
 df_cat <- original_df %>%
-              select("race", "major", "gender")
+              select("race", "major", "gender", "score")
 
 df_cat$gender <- as.character(df_cat$gender)
 class(df_cat$gender)
@@ -146,5 +146,27 @@ ggplot(pca_df_cat, aes(x=PC1, y=PC3, col=major)) + geom_point() + theme_bw() + g
 
 
 ```
+
+
+Linear Regression with the orignal df
+```{r}
+lg <- lm(score ~ PC1, pca_df_cat)
+summary(lg)
+
+```
+
+```{r}
+#Make prediction with the linear regression model
+predicted_df <- data.frame(pred_score=predict(lg, pca_df_cat), PC2=pca_df_cat$PC2)
+
+
+library(ggplot2)
+ggplot(pca_df_cat, aes(x=PC1, y=log10(score))) + geom_point(color='blue') + scale_y_continuous(trans='log10') 
+# + geom_smooth(method="lm", se=FALSE)
+
+
+```
+
+
  
  
