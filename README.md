@@ -19,7 +19,7 @@ The outcome variable of our algorithm is the approval ratings of RA students. At
 | **GPA**       | GPA                                                                                                                                                |
 | **major**     | major                                                                                                                                              |
 </br>
-**Below are the survey questions. scale of 1-10 **
+**Below are the personality/attribute test questions. scale of 1-10 **
 </br>
 up to Q20, scores are random numbers (weighted accordingly) </br>
 from Q21 to Q50, scores are calculated based on the average of the scores of the first 20 questions </br>
