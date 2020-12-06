@@ -113,15 +113,16 @@ After clustering groups together, we can introduce the traditional supervised le
 
 **Model Training and Testing** </br>
 There are several other ways that we can analyze the data. For example, either k-means clustering or hierarchical clustering can be used to group the data points together. (Due to the continuous variables and other properties of our dataset, k-means clustering may be more ideal in our case).
-
+</br></br>
 After doing PCA, we can introduce the traditional supervised learning method: Linear Regression. Depending on the data, polynomial regression may be necessary and further value regularization may be required. Furthermore, in real-life there may be more variants that cause biases, in which case either Lasso or Ridge regression utilization prevents under- or over-fitting. For simplicity (and lack of real life data), we will assume that multiple linear regressions are sufficient to build our model.  
-
+</br></br>
 With the new indices from the PCA, we created a more meaningful regression model which excludes insignificant variables that may affect our model. After building this regression model, R-squared values are reviewed to carry out in-sample model evaluation. 
-
+</br></br>
 After establishing the statistical model, we can “train” the new data. We will do this by applying a 5-10 K-fold cross-validation to reduce biases and prevent overfitting in case of using polynomial regression. 
-
+</br></br>
 Due to the simplicity of our data output, there aren’t many alternative ways of using them to make decisions. However, one thing we can do is to increase or decrease the threshold for the approval rate. As mentioned before, the hiring team can set this threshold according to the amount of needed hires. They can tighten set stricter thresholds and this potentially prevents personal biases against applicants as well. 
-
+</br></br>
 This is only an assisting tool for the hiring teams and should not entirely replace them. Based on the hiring algorithms that already exist in different industries, this is not a novel idea. The recruiters will see this as a tool that can lessen their burden and increase the efficiency of the hiring process. Reading hundreds of applications is not only time consuming but also hinders decision making capabilities. Also, the usage of “knockout” questions like GPA minimums, and other fixed standards is analogous to the initial screening process.
-
+</br></br>
 Despite the algorithmic biases that we will discuss in this paper, we strongly believe that our algorithm can still improve over the current recruiters when it comes to narrowing down applicants. Whether it is intentional or not, recruiters report that certain recognizable indicators like race, both through tell tale signs like “ethnic” names and marked races and gender, affected their decisions in the hiring process. Subconscious prejudice or favoritism is unavoidable for most humans and that is why using an algorithmic tool is necessary to ensure equity in the hiring process. 
+</br></br>
