@@ -1,11 +1,11 @@
 # RA hiring algorithm
 ### Machine learning algorithm for RA hiring process
-As mentioned in the previous section, algorithms can help expedite the hiring process and bring a more unbiased view. Before the hiring team goes through each individual’s resume, the algorithms can filter out applicants that do not meet the basic qualifications or failed certain tests that the algorithm implements. <br>
-Along with our algorithms, we want to propose that each applicant takes a customized personality/attribute test during the hiring process. Each applicant will be prompted to log in to our survey website using one of their social media accounts (Facebook, Linkedin or Twitter) to take our test and the basic information from their social media profiles will also be gathered for the same purpose. In order to prevent biased decision making or privacy breach by any of the hiring team members, the information gathered during this step will be digitized, normalized and regularized for our algorithm. The sole purpose of this survey is to collect as many data points as possible, not to pry into their personal life. The online application will entail all the independent variables that we will be using to build the statistical model. <br>
-The outcome variable of our algorithm is the approval ratings of RA students. At the end of each academic year, students will be asked to evaluate their RAs by stating whether they recommend them or not. The answers will be binary (yes or no) but they will be aggregated and we will use the percentage of  the ‘yes’ value as the outcome variables. Each RA will be assigned a single percentage based score and we will set the threshold based on the number of RAs that each college needs. Once again, this algorithm is for the filtering purpose and it will not make the final decision. <br>
+As mentioned in the previous section, algorithms can help expedite the hiring process and bring a more unbiased view. Before the hiring team goes through each individual’s resume, the algorithms can filter out applicants that do not meet the basic qualifications or failed certain tests that the algorithm implements. <br></br>
+Along with our algorithms, we want to propose that each applicant takes a customized personality/attribute test during the hiring process. Each applicant will be prompted to log in to our survey website using one of their social media accounts (Facebook, Linkedin or Twitter) to take our test and the basic information from their social media profiles will also be gathered for the same purpose. In order to prevent biased decision making or privacy breach by any of the hiring team members, the information gathered during this step will be digitized, normalized and regularized for our algorithm. The sole purpose of this survey is to collect as many data points as possible, not to pry into their personal life. The online application will entail all the independent variables that we will be using to build the statistical model. <br></br>
+The outcome variable of our algorithm is the approval ratings of RA students. At the end of each academic year, students will be asked to evaluate their RAs by stating whether they recommend them or not. The answers will be binary (yes or no) but they will be aggregated and we will use the percentage of  the ‘yes’ value as the outcome variables. Each RA will be assigned a single percentage based score and we will set the threshold based on the number of RAs that each college needs. Once again, this algorithm is for the filtering purpose and it will not make the final decision. <br></br>
 
 <br>
-
+</br>
 ## 1. Dataset 
 ### [RA_dataset.csv](https://github.com/jameshyojaelee/RA_hiring_algorithm/raw/main/RA_dataset.csv)
 | variable      | description                                                                                                                                        |
@@ -93,16 +93,16 @@ The subset of data is then normalized using Z-score. </br>
 
 The survey questions are digitized and normalized on the scale of 1-10. In the pseudo-data we have created, there are 50 indicators that are derived from the survey. Since there are too many variables, we carried out Principal Component Analysis (PCA) in order to reduce the dimensions. Some of the categorical variables above are dropped before calculating the PCA values. PCA is calculated using the covariance matrix, eigenvectors and eigenvalues. </br>
 The categorical variables are added on after PCA in order to visualize the distribution of those variables. As seen in the below graphs, none of the categorical variables have a significant impact on the results. Once again, this is derived from pseudo-data so the results may be different from these. We are focusing more on the methodology here. 
-</br>
+</br></br>
 Figure 1) PC1 vs PC2 with the race indicator. There is no clear distinction between each race. 
 ![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PCA/PC1%20vs%20PC2%20(Race).JPG) 
-</br>
+</br></br>
 Figure 2) PC2 vs PC3 with the gender indicator. There is no clear distinction between each gender either. 
 ![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PCA/PC2%20vs%20PC3%20(gender).JPG)
-</br>
+</br></br>
 Figure 3) PC1 vs PC2 with the major indicator. There is no clear distinction between each major either.  
 ![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PCA/PC1%20vs%20PC3%20(Major).JPG)
-</br>
+</br></br>
 Figure 5) The proportion of variance for each principal component. PC1 is the largest component and the rest have a similar level of variance. This indicates that none of the categorical variables have a meaningful impact on the result. 
 ![alt text](https://github.com/jameshyojaelee/RA_hiring_algorithm/blob/main/PCA/Principal%20Component%20Variance%20Proportion.JPG)
 </br>
@@ -110,7 +110,7 @@ Figure 5) The proportion of variance for each principal component. PC1 is the la
 There are several other ways that we can analyze the data. For example, either k-means clustering or hierarchical clustering can be used to group the data points together. (Due to the continuous variables and other properties, k-means clustering may be more ideal in our case). </br>
 After clustering groups together, we can introduce the traditional supervised learning method: Linear Regression. Depending on the data, polynomial regression may be necessary and further value regularization may be required. Furthermore, in real-life there may be more variants that cause biases, in which case either Lasso or Ridge regression can be utilized in order to prevent under- or over-fitting.  </br>
   After building a regression model, R-squared values need to be reviewed in order to carry out in-sample model evaluation. </br>
-
+</br>
 **Model Training and Testing** </br>
 There are several other ways that we can analyze the data. For example, either k-means clustering or hierarchical clustering can be used to group the data points together. (Due to the continuous variables and other properties of our dataset, k-means clustering may be more ideal in our case).
 </br></br>
